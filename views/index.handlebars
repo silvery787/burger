@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row title">
+    <div class="col-12">
+      <h1>Eat-Da-Burger!!</h1>
+      <img class=".img-fluid" src="/assets/img/burger.png">
+    </div>
+  </div>
+  <div class="row justify-content-start align-items-start">
+    <div class="col-7 burger_list">
+      <h4>Available burgers</h4>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+        {{/each}}
+    </div>
+    <div class="col-5 burger_list">
+      <h4>Devoured burgers</h4>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block devoured=true}}
+          {{/if}}
+        {{/each}}
+    </div>
+  </div>
+  <hr>
+  <div class="row justify-content-md-center">
+    <div class="col-12">
+      <h4>Add a Burger</h4>
+      <form class="add-form">
+        <div class="form-group">
+          <input type="text" id="new_burger" name="burger_name">
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+      <!--
+      <br>
+      Enter a burger you want to eat and press submit button.
+      -->
+    </div>
+  </div>
+</div>

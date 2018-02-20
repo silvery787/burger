@@ -1,0 +1,18 @@
+<div class="container">	
+	<div class="row justify-content-start">
+		{{#if devoured}}
+			<div class="col12 burger">
+				{{burger_name}}
+			</div>
+		{{else}}
+			<div class="col-8 burger">
+				{{burger_name}}
+			</div>
+			<div class="col-4">
+				<button type="button" class="devour_btn btn-sm btn-outline-primary" data-id="{{id}}" >
+					Devour!
+				</button>
+			</div>
+		{{/if}}
+	</div>
+</div>
