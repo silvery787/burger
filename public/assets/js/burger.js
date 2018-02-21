@@ -1,5 +1,6 @@
 $(function() {
-  $(".devour_btn").on("click", function(event) {
+  $(".burger_list").on("click", "button",function(event) {
+  // $(".devour_btn").on("click", function(event) {
     var id = $(this).data("id");
     var devouredBurger = { devoured: true };
 
@@ -9,19 +10,6 @@ $(function() {
     }).then(
       function() {
         console.log("devoured burger id ", id);
-        location.reload();
-      }
-    );
-  });
-
-  $(".devour_btn").on("click", function(event){
-    var id = $(this).data("id");
-    console.log("Devour clicked");
-    $.ajax("/api/burger/" + id, {
-      type: "PUT"
-    }).then(
-      function() {
-        console.log("devoured burger: ", id);
         location.reload();
       }
     );
